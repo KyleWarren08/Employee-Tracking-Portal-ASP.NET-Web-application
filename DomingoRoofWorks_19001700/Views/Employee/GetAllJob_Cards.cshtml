@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DomingoRoofWorks_19001700.Models.Job_CardModel>
+
+<p>
+    @Html.ActionLink("Go Home", "DeleteEmployee") |
+    @Html.ActionLink("Add New Job Card", "AddJob_Card")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Job_Card)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job_Type_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Days_For_Job)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @Html.HiddenFor(modelItem => item.Job_Card)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Card)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Type_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Days_For_Job)
+            </td>
+
+            <td>
+                @Html.ActionLink("Delete", "DeleteJob_Card", new { ID = item.Job_Card }, new { oneclick = "return confirm('Are you sure you want to delete?);" })
+            </td>
+
+        </tr>
+    }
+
+</table>

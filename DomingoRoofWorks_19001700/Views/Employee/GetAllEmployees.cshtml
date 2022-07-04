@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DomingoRoofWorks_19001700.Models.EmployeeModel>
+
+    <p>
+        @Html.ActionLink("Go Home", "DeleteEmployee") |
+        @Html.ActionLink("Add New Employee", "AddEmployee")
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_Name)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        @Html.HiddenFor(modelItem => item.Employee_ID)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEmployee", new { ID = item.Employee_ID }) |
+                @Html.ActionLink("Delete", "DeleteEmployee", new { ID = item.Employee_ID }, new { oneclick = "return confirm('Are you sure you want to delete?);" })
+            </td>
+        </tr>
+    }
+</table>

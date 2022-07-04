@@ -1,0 +1,43 @@
+﻿@model DomingoRoofWorks_19001700.Models.Job_TypeModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Edit Job Card</h4>
+        <hr />
+        <div>
+            @Html.ActionLink("Job Type List", "GetAllJob_Types")
+        </div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Job_Type_ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Job_Type_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class=" = col-md-10">
+                @Html.EditorFor(model => model.Job_Type_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Job_Type_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Daily_Rate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class=" = col-md-10">
+                @Html.EditorFor(model => model.Daily_Rate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Daily_Rate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class=" = col-md-offset-2 col-md-10">
+                <input type="submit" value="SAVE CHANGES" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DomingoRoofWorks_19001700.Models.Job_TypeModel>
+
+<p>
+    @Html.ActionLink("Go Home", "DeleteEmployee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Job_Type_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Daily_Rate)
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        @Html.HiddenFor(modelItem => item.Job_Type_ID)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job_Type_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Daily_Rate)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "EditJob_Type", new { ID = item.Job_Type_ID })
+            </td>
+        </tr>
+    }
+</table>

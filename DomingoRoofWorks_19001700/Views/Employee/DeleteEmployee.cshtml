@@ -1,0 +1,23 @@
+﻿@model DomingoRoofWorks_19001700.Models.EmployeeModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h3>Create a Job Card or Invoice</h3>
+    <div>
+        @Html.ActionLink("Add New Job Card", "AddJob_Card") |
+        @Html.ActionLink("Add New Invoice", "AddInvoices")
+    </div>
+    <h3>Add an Employee</h3>
+    <div>
+        @Html.ActionLink("Add New Employee", "AddEmployee")
+    </div>
+    <h3>View Job Crads, Invoices, Job Types and Employees</h3>
+    <div>
+        @Html.ActionLink("View Job Cards", "GetAllJob_Cards") |
+        @Html.ActionLink("View Invoices", "GetAllInvoices") |
+        @Html.ActionLink("View Job Types", "GetAllJob_Types") |
+        @Html.ActionLink("View Employees", "GetAllEmployees")
+    </div>
+}
+
